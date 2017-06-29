@@ -7,6 +7,10 @@
 ```
 $ composer install
 
+$ cp .env.example .env
+
+$ php artisan key:genarate
+
 $ php artisan migrate
 
 $ php artisan serve
