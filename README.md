@@ -1,2 +1,15 @@
-# Laravel-5-4
-Laravel-5-4 Chinese Template
+## Laravel Framework 5.4.27
+
+中文本地化版本。
+
+## 安装
+
+```
+$ composer install
+
+$ php artisan migrate
+
+$ php artisan serve
+```
+
+浏览器键入 http://localhost:8000 浏览
