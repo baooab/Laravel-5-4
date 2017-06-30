@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
 Route::group(['namespace' => 'Auth'], function () {
     // Sessions
     Route::get('login', ['as' => 'login', 'uses' => 'LoginController@showLoginForm']);
