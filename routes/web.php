@@ -15,9 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+/*
+    
+    用户认证系统
+
+*/
 
 Route::group(['namespace' => 'Auth'], function () {
+
     // Sessions
     Route::get('login', ['as' => 'login', 'uses' => 'LoginController@showLoginForm']);
     Route::post('login', ['as' => 'login.post', 'uses' => 'LoginController@login']);
@@ -32,6 +37,10 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('password/email', ['as' => 'password.forgot.post', 'uses' => 'ForgotPasswordController@sendResetLinkEmail']);
     Route::get('password/reset/{token}', ['as' => 'password.reset', 'uses' => 'ResetPasswordController@showResetForm']);
     Route::post('password/reset', ['as' => 'password.reset.post', 'uses' => 'ResetPasswordController@reset']);
+
+    // Email address confirmation
+    Route::get('email-confirmation', ['as' => 'email.send_confirmation', 'uses' => 'EmailConfirmationController@send']);
+    Route::get('email-confirmation/{email_address}/{code}', ['as' => 'email.confirm', 'uses' => 'EmailConfirmationController@confirm']);
 
 });
 

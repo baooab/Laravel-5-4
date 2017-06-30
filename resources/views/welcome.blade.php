@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">主页</a>
+                        <a href="{{ url('/dashboard') }}">主页</a>
                     @else
                         <a href="{{ url('/login') }}">登录</a>
                         <a href="{{ url('/register') }}">注册</a>
@@ -83,6 +83,8 @@
                 </div>
 
                 <div class="links">
+                    @include('layouts._alerts')
+                    <br>
                     <a href="https://laravel.com/docs">文档</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
@@ -91,5 +93,17 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            (function () {
+                document.addEventListener("click", function(ev) {
+                    var target = ev.target;
+                    
+                    if (target.nodeName.toLowerCase() == 'button') {
+                        target.parentElement.style.display = 'none';
+                    }   
+                });
+            })();
+        </script>
     </body>
 </html>
