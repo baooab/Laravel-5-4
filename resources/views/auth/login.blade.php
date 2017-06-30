@@ -54,7 +54,7 @@
                                     登录
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" href="{{ route('password.forgot') }}">
                                     忘记密码了？
                                 </a>
                             </div>
