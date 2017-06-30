@@ -54,7 +54,7 @@ class User extends Authenticatable
         $this->update(['confirmed' => true, 'confirmation_code' => null]);
     }
 
-    // send password reset email,  override the default, use markdown style 
+    // send password reset email,  override the default, use markdown style
     public function sendPasswordResetNotification($token)
     {
         Mail::to($this->email)->send(new ResetPassword($token));
